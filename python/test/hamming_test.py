@@ -41,6 +41,9 @@ class HammingTest(unittest.TestCase):
     def test_large_compute_in_off_by_one_strand(self):
         self.assertEqual(9, hamming.compute('GGACGGATTCTG', 'AGGACGGATTCT'))
 
+    def test_very_large_compute(self):
+        self.assertEqual(0, hamming.compute('CAT' * 5000, 'CAT' * 5000))
+
     def test_empty_strands(self):
         self.assertEqual(0, hamming.compute('', ''))
 
